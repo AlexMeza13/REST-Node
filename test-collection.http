@@ -1,0 +1,47 @@
+@baseUrl = http://localhost:3000
+
+### Obtener todas las tareas
+GET {{baseUrl}}/api/tareas
+
+### Buscar tareas por titulo (coincidencia parcial)
+GET {{baseUrl}}/api/tareas/buscar?q=express
+
+### Buscar tareas sin q 
+GET {{baseUrl}}/api/tareas/buscar
+
+
+### Obtener la tarea con ID 1
+GET {{baseUrl}}/api/tareas/1
+
+### Crear una tarea
+POST {{baseUrl}}/api/tareas
+Content-Type: application/json
+
+{
+  "titulo": "Nueva tarea",
+  "completada": false
+}
+
+### Actualizar completamente la tarea con ID 1
+PUT {{baseUrl}}/api/tareas/1
+Content-Type: application/json
+
+{
+  "titulo": "Tarea actualizada",
+  "completada": true
+}
+
+### Actualizar parcialmente la tarea con ID 1
+PATCH {{baseUrl}}/api/tareas/1
+Content-Type: application/json
+
+{
+  "completada": true
+}
+
+### Eliminar la tarea con ID 3
+DELETE {{baseUrl}}/api/tareas/3
+
+
+### Datos Invalidos
+DELETE {{baseUrl}}/api/tareas/ASSDDS
